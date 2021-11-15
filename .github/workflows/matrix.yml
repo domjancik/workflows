@@ -6,6 +6,7 @@ on:
       - main
 jobs:
   print:
+    runs-on: ubuntu-latest
     name: 'Print stuff'
     strategy:
       matrix:
