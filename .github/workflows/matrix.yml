@@ -7,9 +7,11 @@ on:
 strategy:
   matrix:
     value: ["a", "b", "c"]
-steps:
-  - name: 'Print stuff'
-    env:
-      VALUE: ${{ matrix.value }}
-    run: |
-      echo "$VALUE"
+jobs:
+  - print:
+      name: 'Print stuff'
+      steps:
+          env:
+            VALUE: ${{ matrix.value }}
+          run: |
+            echo "$VALUE"
