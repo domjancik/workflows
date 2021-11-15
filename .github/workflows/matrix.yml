@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-strategy:
-  matrix:
-    value: ["a", "b", "c"]
 jobs:
   print:
     name: 'Print stuff'
+    strategy:
+      matrix:
+        value: ["a", "b", "c"]
     steps:
       - env:
           VALUE: ${{ matrix.value }}
