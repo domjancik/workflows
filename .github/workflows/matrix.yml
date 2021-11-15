@@ -8,10 +8,10 @@ strategy:
   matrix:
     value: ["a", "b", "c"]
 jobs:
-  - print:
-      name: 'Print stuff'
-      steps:
-          env:
-            VALUE: ${{ matrix.value }}
-          run: |
-            echo "$VALUE"
+  print:
+    name: 'Print stuff'
+    steps:
+      env:
+        VALUE: ${{ matrix.value }}
+      run: |
+        echo "$VALUE"
