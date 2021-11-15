@@ -1,0 +1,15 @@
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+strategy:
+  matrix:
+    value: ["a", "b", "c"]
+steps:
+  - name: 'Print stuff'
+    env:
+      VALUE: ${{ matrix.value }}
+    run: |
+      echo "$VALUE"
