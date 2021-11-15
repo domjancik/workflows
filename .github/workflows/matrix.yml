@@ -16,4 +16,9 @@ jobs:
           VALUE: ${{ matrix.value }}
         run: |
           echo "$VALUE"
+  after:
+    runs-on: ubuntu-latest
+    name: 'Finalize'
+    needs: print
+    steps:
       - run: echo done
