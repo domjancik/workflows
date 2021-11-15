@@ -11,7 +11,7 @@ jobs:
   print:
     name: 'Print stuff'
     steps:
-      env:
-        VALUE: ${{ matrix.value }}
-      run: |
-        echo "$VALUE"
+      - env:
+          VALUE: ${{ matrix.value }}
+        run: |
+          echo "$VALUE"
