@@ -1,0 +1,12 @@
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+jobs:
+  messages:
+    runs-on: ubuntu-latest
+    name: 'Display error message'
+    steps:
+      - run: echo "::error file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
