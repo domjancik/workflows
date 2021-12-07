@@ -1,0 +1,15 @@
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+jobs:
+  messages-node:
+    runs-on: ubuntu-latest
+    name: 'Display error message'
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: node -e "console.log('::error file=app.js,line=1,col=5,endColumn=7::Missing semicolon')"
