@@ -14,4 +14,6 @@ jobs:
           node-version: '14'
       - run: node -e "console.log('::error file=app.js,line=1,col=5,endColumn=7::Missing semicolon')"
       - run: node -e "console.log('::error file=app.js,line=1,col=5,endColumn=7::Error message with \n newline')"
-      - run: node -e "console.log('::error Error message with no file')"
+      - run: node -e "console.log('::error Error message with no file')" # Does not work
+      - run: node -e "console.log('::error ::Error message with no file 2')"
+      - run: node -e "console.log('::error file=x,line=0,col=0,endColumn=0::Error message with fake file')"
